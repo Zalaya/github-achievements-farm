@@ -13,5 +13,5 @@ if [ -d "$REPOSITORY_NAME" ]; then
 fi
 
 if gh repo view "$REPOSITORY_NAME" &> /dev/null; then
-    gh repo delete "$REPOSITORY_NAME" --confirm
+    gh repo delete "$REPOSITORY_NAME" --yes
 fi
