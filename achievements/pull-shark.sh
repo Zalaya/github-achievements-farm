@@ -32,7 +32,6 @@ do
     git commit --allow-empty -m "Pull Shark"
     git push -u origin "$PULL_SHARK_BRANCH"
     gh pr create -f
-    sleep 3
     gh pr merge --merge --delete-branch
     sleep 3
 done

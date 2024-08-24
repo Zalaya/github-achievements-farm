@@ -1,5 +1,4 @@
 #! /bin/bash
-#! /bin/bash
 
 if [ -f "../.env" ]
 then
@@ -30,6 +29,5 @@ fi
 git checkout -B "$YOLO_BRANCH"
 git commit --allow-empty -m "YOLO"
 git push -u origin "$YOLO_BRANCH"
-gh pr create -f
-sleep 3
-gh pr merge --merge --delete-branch
+gh pr create -f --no-review
+gh pr merge --squash --delete-branch
