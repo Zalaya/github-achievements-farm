@@ -20,7 +20,7 @@ fi
 
 cd "$REPOSITORY_NAME"
 
-if [ $(basename "$(pwd)" != $REPOSITORY_NAME) ]
+if [ $(basename "$(pwd)") != "$REPOSITORY_NAME" ]
 then
     echo "Repository name does not match!"
     exit 1
