@@ -21,8 +21,15 @@ fi
 
 cd "$REPOSITORY_NAME"
 
+if [ $(basename "$(pwd)" != $REPOSITORY_NAME) ]
+then
+    echo "Repository name does not match!"
+    exit 1
+fi
+
 git checkout -B "$YOLO_BRANCH"
 git commit --allow-empty -m "YOLO"
 git push -u origin "$YOLO_BRANCH"
 gh pr create -f
+sleep 3
 gh pr merge --merge --delete-branch
